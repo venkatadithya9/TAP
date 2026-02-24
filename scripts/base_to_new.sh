@@ -1,26 +1,27 @@
 #!/bin/bash
-DATA=/path/to/data
+DATA=/home/harsha/ConceptLoRA/Concept_LoRA/data
 TRAINER=TAP
 SHOTS=16
 
 DATASET_SETTINGS=(
-    "dtd,1.0,0.002,0.006,3.0"
-    "eurosat,1.0,0.004,0.004,1.5"
-    "oxford_pets,1.0,0.004,0.004,1.5"
-    "food101,1.0,0.004,0.004,1.5"
-    "oxford_flowers,1.0,0.002,0.006,3.0"
-    "stanford_cars,0.95,0.002,0.006,3.0"
-    "fgvc_aircraft,1.0,0.004,0.004,1.5"
+    # "dtd,1.0,0.002,0.006,3.0"
+    # "eurosat,1.0,0.004,0.004,1.5"
+    # "oxford_pets,1.0,0.004,0.004,1.5"
+    # "food101,1.0,0.004,0.004,1.5"
+    # "oxford_flowers,1.0,0.002,0.006,3.0"
+    # "stanford_cars,0.95,0.002,0.006,3.0"
+    # "fgvc_aircraft,1.0,0.004,0.004,1.5"
     "ucf101,0.95,0.002,0.006,3.0"
-    "caltech101,1.0,0.002,0.006,3.0"
-    "sun397,0.95,0.004,0.004,1.5"
-    "imagenet,0.95,0.004,0.004,1.5"
+    # "caltech101,1.0,0.002,0.006,3.0"
+    # "sun397,0.95,0.004,0.004,1.5"
+    # "imagenet,0.95,0.004,0.004,1.5"
+    # "medmnist,1.0,0.002,0.006,3.0" # What paremeters to use for medmnist? I just used the same as dtd
 )
 vision_num_epochs=50
 text_num_epochs=10
 num_epochs=60
 
-bs=32
+bs=16
 OPTIM_NAME=adamw
 
 for SEED in 1 2 3; do

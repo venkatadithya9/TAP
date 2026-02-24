@@ -17,6 +17,7 @@ import datasets.sun397
 import datasets.caltech101
 import datasets.ucf101
 import datasets.imagenet
+import datasets.medmnist
 
 import datasets.imagenet_sketch
 import datasets.imagenetv2
@@ -166,6 +167,8 @@ def main(args):
 
     if not args.no_train:
         test_results = trainer.train()
+        # Save the final model checkpoint after training
+        trainer.save_model(trainer.epoch, trainer.output_dir)
 
 
 if __name__ == "__main__":
